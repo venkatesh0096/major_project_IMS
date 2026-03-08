@@ -17,6 +17,20 @@ export const SettingsProvider = ({ children }) => {
         avatar: user?.avatar || null
     });
 
+    // Update profile when user data from AuthContext is loaded/changes
+    useEffect(() => {
+        if (user) {
+            setProfile(prev => ({
+                ...prev,
+                name: user.name || prev.name,
+                email: user.email || prev.email,
+                phone: user.phone || prev.phone,
+                department: user.department || prev.department,
+                avatar: user.avatar || prev.avatar
+            }));
+        }
+    }, [user]);
+
     const [institution, setInstitution] = useState({
         name: 'NIT Nagpur',
         address: '',

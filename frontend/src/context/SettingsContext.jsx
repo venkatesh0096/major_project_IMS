@@ -50,7 +50,7 @@ export const SettingsProvider = ({ children }) => {
     const fetchSettings = async () => {
         if (!token) return;
         try {
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/api`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/settings`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             if (response.ok) {
@@ -88,7 +88,7 @@ export const SettingsProvider = ({ children }) => {
     // Update Profile (Persists to User table)
     const updateProfile = async (data) => {
         try {
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/api`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/settings`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -117,7 +117,7 @@ export const SettingsProvider = ({ children }) => {
     // Update Password (Persists to User table)
     const updatePassword = async (currentPassword, newPassword) => {
         try {
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/api`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/settings`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -140,7 +140,7 @@ export const SettingsProvider = ({ children }) => {
     // Update Institution (Persists to DB)
     const updateInstitution = async (data) => {
         try {
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/api`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/settings`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -173,7 +173,7 @@ export const SettingsProvider = ({ children }) => {
         const updatedNotifications = { ...notifications, [key]: newVal };
 
         try {
-            await fetch(`${import.meta.env.VITE_API_URL}/api`, {
+            await fetch(`${import.meta.env.VITE_API_URL}/api/settings`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

@@ -28,7 +28,7 @@ const TeacherResources = () => {
     const fetchResources = async () => {
         try {
             const token = localStorage.getItem('token');
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/api`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/resources`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
 
@@ -49,7 +49,7 @@ const TeacherResources = () => {
     const fetchDepartments = async () => {
         try {
             const token = localStorage.getItem('token');
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/api`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/resources`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             if (!response.ok) {
@@ -68,7 +68,7 @@ const TeacherResources = () => {
     const fetchSubjects = async () => {
         try {
             const token = localStorage.getItem('token');
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/api`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/resources`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             if (!response.ok) {
@@ -103,7 +103,7 @@ const TeacherResources = () => {
 
         try {
             const token = localStorage.getItem('token');
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/api`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/resources`, {
                 method: 'POST',
                 headers: { 'Authorization': `Bearer ${token}` },
                 body: data

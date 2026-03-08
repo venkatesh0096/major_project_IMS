@@ -1,4 +1,4 @@
-const API_URL = `${import.meta.env.VITE_API_URL}/api`;
+const API_URL = `${import.meta.env.VITE_API_URL}/api/attendance`;
 
 export const attendanceService = {
     // Fetch departments to populate classes list

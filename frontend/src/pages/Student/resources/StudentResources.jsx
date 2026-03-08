@@ -17,7 +17,7 @@ const StudentResources = () => {
     const fetchResources = async () => {
         try {
             const token = localStorage.getItem('token');
-            let url = `${import.meta.env.VITE_API_URL}/api`;
+            let url = `${import.meta.env.VITE_API_URL}/api/resources`;
             const params = new URLSearchParams();
             if (filters.semester) params.append('semester', filters.semester);
             if (filters.subjectId) params.append('subjectId', filters.subjectId);
@@ -44,7 +44,7 @@ const StudentResources = () => {
     const fetchSubjects = async () => {
         try {
             const token = localStorage.getItem('token');
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/api`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/resources`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
 

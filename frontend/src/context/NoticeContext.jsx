@@ -14,7 +14,7 @@ export const NoticeProvider = ({ children }) => {
         try {
             const url = audience
                 ? `${import.meta.env.VITE_API_URL}/api/notices?audience=${audience}`
-                : `${import.meta.env.VITE_API_URL}/api`;
+                : `${import.meta.env.VITE_API_URL}/api/notices`;
 
             const response = await fetch(url, {
                 headers: {
@@ -34,7 +34,7 @@ export const NoticeProvider = ({ children }) => {
 
     const addNotice = async (noticeData) => {
         try {
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/api`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/notices`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

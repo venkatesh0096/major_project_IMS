@@ -16,7 +16,7 @@ export const AttendanceProvider = ({ children }) => {
     // Fetch Classes (Departments)
     const fetchClasses = async () => {
         try {
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/api`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/attendance`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             const data = await response.json();
@@ -66,7 +66,7 @@ export const AttendanceProvider = ({ children }) => {
     // Mark Attendance (Bulk)
     const markAttendance = async (records, date, subject, className) => {
         try {
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/api`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/attendance`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

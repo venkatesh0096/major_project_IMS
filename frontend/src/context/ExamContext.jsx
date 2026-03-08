@@ -14,7 +14,7 @@ export const ExamProvider = ({ children }) => {
         if (!token) return;
         setLoading(true);
         try {
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/api`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/exams`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             const data = await response.json();
@@ -33,7 +33,7 @@ export const ExamProvider = ({ children }) => {
         try {
             const url = examId
                 ? `${import.meta.env.VITE_API_URL}/api/exams/my-results?examId=${examId}`
-                : `${import.meta.env.VITE_API_URL}/api`;
+                : `${import.meta.env.VITE_API_URL}/api/exams`;
 
             const response = await fetch(url, {
                 headers: { Authorization: `Bearer ${token}` }
@@ -51,7 +51,7 @@ export const ExamProvider = ({ children }) => {
     const submitMarks = async (examId, subjectId, marksData) => {
         if (!token) return { success: false };
         try {
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/api`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/exams`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -75,7 +75,7 @@ export const ExamProvider = ({ children }) => {
     const createExam = async (examData) => {
         if (!token) return { success: false };
         try {
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/api`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/exams`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

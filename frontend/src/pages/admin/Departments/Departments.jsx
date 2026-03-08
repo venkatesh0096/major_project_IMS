@@ -16,7 +16,7 @@ const Departments = () => {
     const fetchDepartments = async () => {
         setLoading(true);
         try {
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/api`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/departments`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             if (response.ok) {
@@ -35,7 +35,7 @@ const Departments = () => {
     }, [token]);
 
     const handleAddDepartment = async (deptData) => {
-        const response = await fetch(`${import.meta.env.VITE_API_URL}/api`, {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/departments`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

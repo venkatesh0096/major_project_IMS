@@ -21,7 +21,7 @@ const CreateNotice = () => {
         const fetchDepts = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const response = await fetch(`${import.meta.env.VITE_API_URL}/api`, {
+                const response = await fetch(`${import.meta.env.VITE_API_URL}/api/departments`, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 if (response.ok) {

@@ -46,7 +46,7 @@ const AddUser = () => {
                 // or assume we have a Department Context coming later.
                 // Since this is an admin page, we can assume token is in localStorage or handled by context helper if available.
                 const token = localStorage.getItem('token');
-                const response = await fetch(`${import.meta.env.VITE_API_URL}/api`, {
+                const response = await fetch(`${import.meta.env.VITE_API_URL}/api/departments`, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 if (response.ok) {
